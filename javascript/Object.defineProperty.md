@@ -11,7 +11,7 @@ obj.a = 1;
 
 // 使用Object.defineProperty定义
 Object.defineProperty(obj, "b",
-{X
+{
     value: 2
 });
 
