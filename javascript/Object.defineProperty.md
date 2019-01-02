@@ -1,7 +1,4 @@
 # Object.defineProperty
-
-
-
 ## “=” 与 Object.defineProperty
 
 为JavaScript对象新增或者修改属性，有两种不同方式：直接使用=赋值或者使用Object.defineProperty()定义。如下：
@@ -14,7 +11,7 @@ obj.a = 1;
 
 // 使用Object.defineProperty定义
 Object.defineProperty(obj, "b",
-{
+{X
     value: 2
 });
 
