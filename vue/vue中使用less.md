@@ -21,9 +21,9 @@
 
 现在基本上已经安装完成了，然后在使用的时候在style标签里加上lang=”less”里面就可以写less的代码了(style标签里加上 scoped 为只在此作用域 有效)
 
-或者:
-
 ```
+<style lang="less" scoped>
 @import './index.less'; //引入全局less文件
-```
+
+</style>
 
