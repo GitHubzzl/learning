@@ -34,7 +34,11 @@ cookie保存在浏览器端，session保存在服务器端
 
 #### 5、安全性
 
-​	cookie：针对cookie所存在的攻击：Cookie欺骗，Cookie截获；session的安全性大于cookie。原因如下：（1）sessionID存储在cookie中，若要攻破session首先要攻破cookie；
+cookie：针对cookie所存在的攻击：Cookie欺骗，Cookie截获；
+
+session的安全性大于cookie。原因如下：
+
+（1）sessionID存储在cookie中，若要攻破session首先要攻破cookie；
 
 （2）sessionID是要有人登录，或者启动session_start才会有，所以攻破cookie也不一定能得到sessionID；
 
@@ -58,7 +62,9 @@ cookie保存在浏览器端，session保存在服务器端
 
 ![img](https://images2017.cnblogs.com/blog/1209205/201709/1209205-20170928000104559-1868896430.png)
 
-**session：**Session用于保存每个用户的专用信息，变量的值保存在服务器端，通过SessionID来区分不同的客户。
+**session：**
+
+Session用于保存每个用户的专用信息，变量的值保存在服务器端，通过SessionID来区分不同的客户。
 
 （1）网上商城中的购物车
 

@@ -77,9 +77,9 @@ export default {
 - action提交的是mutation,而不是直接更改状态
 - action 可以包含任何异步操作
 
-### 分发 action
+### 1.分发 action
 
-### 在组件中分发Action
+### 2.在组件中分发Action
 
 你在组件中使用 this.$store.dispatch('xxx') 分发 action，或者使用 `mapActions` 辅助函数将组件的 methods 映射为 store.dispatch 调用（需要先在根节点注入 store）：
 
@@ -102,7 +102,7 @@ export default {
 }
 ```
 
-### 组合 Action
+### 3.组合 Action
 
 Action 通常是异步的，那么如何知道 action 什么时候结束呢？更重要的是，我们如何才能组合多个 action，以处理更加复杂的异步流程？
 
@@ -159,7 +159,9 @@ store.state.b // -> moduleB 的状态
 
 默认情况下，模块内部的 action、mutation 和 getter 是注册在全局命名空间的——这样使得多个模块能够对同一 mutation 或 action 作出响应。
 
-如果希望你的模块具有更高的封装度和复用性，你可以通过添加 namespaced: true 的方式使其成为命名空间模块。当模块被注册后，它的所有 getter、action 及 mutation 都会自动根据模块注册的路径调整命名。例如：
+**注意：不使用命名空间，this.$store.commit('mutationName',value),则同名的mutation都会做出响应**
+
+如果希望你的模块具有更高的封装度和复用性，你可以通过添加 **namespaced: true** 的方式使其成为命名空间模块。当模块被注册后，它的所有 getter、action 及 mutation 都会自动根据模块注册的路径调整命名。例如：
 
 ```javascript
 const store = new Vuex.Store({
@@ -231,5 +233,24 @@ computed: {
           return this.$store.getters['hero1/doneTodos'][0].item;
       }
   },
+ 
+```
+
+```vue
+computed:{
+      ...mapState({
+        term: state => state.user.term
+      }),
+      school(){
+        return this.$store.state.user.school
+      },
+      friendsLen(){
+        return this.$store.getters['user/friendsLen']
+      }
+ },
+```
+
+```vue
+this.$store.commit('user/updateTerm',"2019-02")
 ```
 
