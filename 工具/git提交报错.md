@@ -25,5 +25,6 @@ git push -u origin master -f
 
 
 
-## 3.
+## 3.关于git push 后出现remote: HTTP Basic: Access denied等相关报错问题
 
+如果是公司git的项目，用户名是不带邮箱后缀
